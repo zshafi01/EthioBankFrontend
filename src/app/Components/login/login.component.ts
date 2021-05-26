@@ -15,11 +15,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
    signin(){
-     this.backendservice.login(this.user).subscribe(user=>{
-    console.log("saved admin is:",JSON.stringify(user));
-    this.router.navigate(['dashboard']);
+     debugger
+     this.backendservice.login(this.user)
+     .subscribe(user=>{
+    let userfound=user as User;
+    let url='/dashboard/'+userfound.id;
+    this.router.navigate([url]);
   },
   error=>{
+    this.router.navigate(['/errorpage']);
+
     console.log("Error is:",error);
     })
 }

@@ -1,0 +1,15 @@
+a{
+    margin: 15px;
+    
+ 
+ }
+ .nav, a ,  .nav-link{
+ color: white;
+ padding:15px 5px;
+ text-size-adjust: bold;
+ }
+ .nav{
+     background-color:#336699;
+     height:75px;
+     
+ }

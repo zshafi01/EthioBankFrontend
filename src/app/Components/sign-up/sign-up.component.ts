@@ -18,11 +18,13 @@ export class SignUpComponent implements OnInit {
   signupuser(){
     this.user.role="user"
   this.backendService.newuser(this.user).subscribe(user=>{
-    console.log("saved food is:",JSON.stringify(user));
-    this.router.navigate(['login']);
+    console.log("saved user is:",JSON.stringify(user));
+    this.router.navigate(['/login']);
     
   },
   error=>{
+    this.router.navigate(['/errorpage']);
+
     console.log("Error is:",error);
   })
 }

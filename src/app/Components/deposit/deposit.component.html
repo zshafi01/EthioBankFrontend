@@ -1,0 +1,17 @@
+ <form #deposit="ngForm"  (ngSubmit)="addmoney()">
+    <div class="form row">
+        <div class="form-group col-md-6">
+            <label for="amount">Amount</label>
+            <input type="amount" name="amount"  class="form-control" id="amount" placeholder="amount">
+    </div>
+    </div>
+    <div class="form row">
+        <div class="form-group col-md-6">
+            <label for="description">Description</label>
+            <input type="description" name="description"  class="form-control" id="description" placeholder="description">
+      </div>
+      </div>
+  <button type="submit" class="btn btn-success" routerLink="/deposit" >Deposit</button><br/>
+
+
+</form>  

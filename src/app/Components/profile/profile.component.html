@@ -1,0 +1,57 @@
+<div class="panel panel-primary">
+    <form #profileform="ngForm" (ngSubmit)="registor()">
+        <div class="panel-heading">
+            <h3 class="panel-title">Profile</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="firstname"> First Name </label>
+                    <input id="firstName" type="text" placeholder="Frist Name" class="form-control" name="firstName"
+                        [(ngModel)]="newcustomer.firstName">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="lastname">Last Name </label>
+                    <input id="lastName" type="text" placeholder="Last Name" class="form-control" name="lastName"
+                        [(ngModel)]="newcustomer.lastName">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email </label>
+                    <input id="email" type="text" placeholder="Email" class="form-control" name="email"
+                        [(ngModel)]="newcustomer.email">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number </label>
+                    <input id="phone" type="text" placeholder="Phone Number" class="form-control" name="phone"
+                        [(ngModel)]="newcustomer.phone">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="address">Address </label>
+                    <input id="address" type="text" placeholder="Full Address" class="form-control" name="address"
+                        [(ngModel)]="newcustomer.address">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+
+                    <label for="ssn">SSN </label>
+                    <input id="ssn" type="text" placeholder="ssn" class="form-control" name="ssn"
+                        [(ngModel)]="newcustomer.ssn">
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary"  >Save</button><br/>
+            </div>
+
+        </div>
+    </form>
+
+</div>

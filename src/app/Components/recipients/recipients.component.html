@@ -1,0 +1,45 @@
+<div class="panel panel-primary">
+    <form #transferform="ngForm" (ngSubmit)="newrecipient()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Add New Recipients</h3>
+        </div>
+        <div class="panel-body">
+        <div class="form-group">
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="fullname"> Full Name </label>
+                    <input id="name" type="text" class="form-control" name="name" [(ngModel)]="recipient.name">
+                    </div>
+                    </div>
+                    <div class="form row">
+                    <div class="form-group col-md-6">
+                        <label for="nickname">Nick Name(optional)</label>
+                        <input id="nickname" type="text" class="form-control" name="nickname" [(ngModel)]="recipient.nickname">
+                    </div>
+                    </div>
+                    <div class="form row">
+                    <div class="form-group col-md-6">
+                   <label for="email">Email</label>
+                    <input id="email" type="text" class="form-control" name="email" [(ngModel)]="recipient.email">
+                   </div>
+                   </div>
+                   <div class="form row">
+                    <div class="form-group col-md-6">
+                    <label for="confirmemail">Confirm Email</label>
+                    <input id="confirmemail" type="text" class="form-control" name="confirmemail" [(ngModel)]="recipient.confirmemail">
+                   </div>
+                   </div>
+                   <div class="form row">
+                    <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input id="phone" type="text" class="form-control" name="phone" [(ngModel)]="recipient.phone">
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        </div>
+        </div>
+    </form>
+</div>

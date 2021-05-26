@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <form #profileform="ngForm" (ngSubmit)="request()">
+        <div class="panel-heading">
+            <h3 class="panel-title">Request New cheque Book</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="form row">
+                    <div class="form-group col-md-6">
+                        <label for="pickaccount">Pick an account</label>
+                        <input id="pickaccount" type="text" class="form-control" name="accounttype">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-6">
+                        <label for="description">Description</label>
+                        <input id="description" type="text" class="form-control" name="description">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </div>
+    </form>
+</div>
