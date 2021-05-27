@@ -15,19 +15,19 @@ import { Recipient } from '../Components/recipients/Recipient.model';
 export class BackendserviceService {
 
   constructor(private http:HttpClient) { }
-  login(user:User):Observable<any>{
+login(user:User):Observable<any>{
         return this.http.post("http://localhost:8081/login", user)
       }
-  newuser(user:User):Observable<any>{
+newuser(user:User):Observable<any>{
             return this.http.post("http://localhost:8081/adduser",user)
       }
       
-   saveCustomer(customer:Customer,userId:string):Observable<any>{
+saveCustomer(customer:Customer,userId:string):Observable<any>{
     
         return this.http.post("http://localhost:8081/addcustomer/"+userId,customer)
-  }
-  createAccount(account:Account):Observable<any>{
-    return this.http.post("http://localhost:8081/addaccount",account)
+ }
+createAccount(account:Account,userId:string):Observable<any>{
+    return this.http.post("http://localhost:8081/addaccount/" +userId,account)
 }
 addcheckreq(chequeBookReq:ChequeBookReq):Observable<any>{
   return this.http.post("http://localhost:8081/addcheckreq", chequeBookReq)
@@ -35,8 +35,8 @@ addcheckreq(chequeBookReq:ChequeBookReq):Observable<any>{
 deposit(deposit:Deposit):Observable<any>{
   return this.http.post("http://localhost:8081/deposit", deposit)
 }
-addtransfer(transfer:Transfer):Observable<any>{
-  return this.http.post("http://localhost:8081/addtransfer", transfer)
+addtransfer(transfer:Transfer, userId:string):Observable<any>{
+  return this.http.post("http://localhost:8081/addtransfer" +userId, transfer)
 }
 addrecipient(recipient:Recipient):Observable<any>{
   return this.http.post("http://localhost:8081/addrecipients", recipient)

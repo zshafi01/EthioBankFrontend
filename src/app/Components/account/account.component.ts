@@ -21,9 +21,9 @@ export class AccountComponent implements OnInit {
     this.dataservice.currentId.subscribe(val=>{
       this.userId=val;
      })
-    this.backendservice.createAccount(this.account).subscribe(account => {
+    this.backendservice.createAccount(this.account,this.userId).subscribe(account => {
        console.log("saved account is:", JSON.stringify(account));
-      if(this.customer==null ){
+      if(this.account==null ){
         this.router.navigate(['/errorpage']);
       }else{
         this.router.navigate(['/dashboard/'+this.userId]);

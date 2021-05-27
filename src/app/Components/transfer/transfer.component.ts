@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendserviceService } from 'src/app/Services/backendservice.service';
+import { DataService } from 'src/app/Services/data.service';
 import { Transfer } from './transfer.model';
 
 @Component({
@@ -10,20 +11,24 @@ import { Transfer } from './transfer.model';
 })
 export class TransferComponent implements OnInit {
   transfer:Transfer= new Transfer;
-  constructor(private backendservice:BackendserviceService, private router:Router) { }
+  userId:string='';
+  constructor(private backendservice:BackendserviceService, private router:Router, private dataservice:DataService) { }
 
   ngOnInit(): void {
   }
   transfermoney(){
-    this.backendservice.addtransfer(this.transfer).subscribe(transfer=>{
-      console.log("saved user is:",JSON.stringify(transfer));
-      this.router.navigate(['/transfer']);
-      
-    },
-    error=>{
-      this.router.navigate(['/errorpage']);
-  
-      console.log("Error is:",error);
-    })
-  }
+    this.dataservice.currentId.subscribe(val=>{
+      this.userId=val;
+     })
+    this.backendservice.addtransfer(this.transfer, this.userId).subscribe(transfer => {
+       console.log("saved account is:", JSON.stringify(transfer));
+      if(this.transfer==null ){
+        this.router.navigate(['/errorpage']);
+      }else{
+        this.router.navigate(['/dashboard/'+this.userId]);
+      }     },
+      error => {
+        console.log("Error is:", error);
+      })
+}
 }
