@@ -1,9 +1,27 @@
-<!-- <form #withdraw="ngForm"  (ngSubmit)="withdraw()">
+<form #deposit="ngForm" (ngSubmit)="subtractmoney()">
+  <div  *ngIf="accountsList!=[] && accountsList.length>=1">
     
-    <div class="form-group">
-      <input type="amount" name="amount" [(ngModel)]="account.balance" class="form-control" id="amount" placeholder="amount">
-    </div>
-  <a type="button" class="btn btn-success" routerLink="/withdraw" >Withdraw</a><br/>
+      <div class="form row">
+          <div class="form-group col-md-6">
+              <label for="cardtypes">Account Types</label>
+              <select name="cardtypes" id="cardtypes" [(ngModel)]="accountnumber">
+                  <option *ngFor="let account of accountsList" [value]="account.id">{{account.types}}/{{account.balance}}</option>
+              </select>
+  
+          </div>
+      </div>
+      <div class="form row">
+          <div class="form-group col-md-6">
+              <label for="amount">Amount</label>
+              <input type="amount" name="amount" class="form-control" id="amount" placeholder="amount"
+              [(ngModel)]="amount">
+          </div>
+      </div>
+    
+      <button type="submit" class="btn btn-success">Withdrawl</button><br />
+  </div>
+  <div *ngIf="accountsList==[] || accountsList.length==0">No account</div>
+  
 
 
-</form> -->
+</form>

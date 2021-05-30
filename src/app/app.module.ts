@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
 
@@ -20,6 +21,7 @@ import { CheckRequestComponent } from './Components/check-request/check-request.
 import { ErrorpageComponent } from './Components/errorpage/errorpage.component';
 import { RecipientsComponent } from './Components/recipients/recipients.component';
 import { NavComponent } from './Components/nav/nav.component';
+import { TransactionComponent } from './Components/transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { NavComponent } from './Components/nav/nav.component';
     CheckRequestComponent,
     ErrorpageComponent,
     RecipientsComponent,
-    NavComponent
+    NavComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,8 @@ import { NavComponent } from './Components/nav/nav.component';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+
 
    
   ],

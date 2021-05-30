@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
    signin(){
-     debugger
      this.backendservice.login(this.user)
      .subscribe(user=>{
     let userfound=user as User;

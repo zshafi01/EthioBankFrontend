@@ -8,11 +8,19 @@ import { Account } from '../Components/account/Account.modle';
 import { Deposit } from '../Components/deposit/Deposit.model';
 import { Transfer } from '../Components/transfer/transfer.model';
 import { Recipient } from '../Components/recipients/Recipient.model';
+import { Transaction } from '../Components/transaction/Transaction.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendserviceService {
+  listoftransaction(userId:string):Observable<any>{
+    return this.http.get("http://localhost:8081/listoftransaction/"+userId);
+  }
+  
+  loadAccounts(userId:string):Observable<any> {
+    return this.http.get("http://localhost:8081/accountsByUserId/"+userId);
+  }
 
   constructor(private http:HttpClient) { }
 login(user:User):Observable<any>{
@@ -32,8 +40,13 @@ createAccount(account:Account,userId:string):Observable<any>{
 addcheckreq(chequeBookReq:ChequeBookReq):Observable<any>{
   return this.http.post("http://localhost:8081/addcheckreq", chequeBookReq)
 }
-deposit(deposit:Deposit):Observable<any>{
-  return this.http.post("http://localhost:8081/deposit", deposit)
+deposit(accountNumber:string,amount:string):Observable<any>{
+  const url="http://localhost:8081/deposit/"+accountNumber+"/"+amount
+  return this.http.get(url)
+}
+withdrawl(accountNumber:string,amount:string):Observable<any>{
+  const url="http://localhost:8081/withdrawl/"+accountNumber+"/"+amount
+  return this.http.get(url)
 }
 addtransfer(transfer:Transfer, userId:string):Observable<any>{
   return this.http.post("http://localhost:8081/addtransfer" +userId, transfer)
@@ -42,4 +55,14 @@ addrecipient(recipient:Recipient):Observable<any>{
   return this.http.post("http://localhost:8081/addrecipients", recipient)
 
 }
+
+listofAccountByUserId(userId:string):Observable<any>{
+  return this.http.get('http://localhost:8081/accountsByUserId/'+userId)
+}
+
+customerByUserId(userId:string):Observable<any>{
+  return this.http.get('http://localhost:8081/customerUserId/'+userId)
+}
+
+// 
 }
