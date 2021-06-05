@@ -43,7 +43,8 @@ export class WithdrawComponent implements OnInit {
 
       },
       error=>{
-        this.router.navigate(['/errorpage']);
+        debugger
+        this.router.navigate(['/errorpage',{'error':'not able to withdraw may be inseficient fund'}]);
     
         console.log("Error is:",error);
         })

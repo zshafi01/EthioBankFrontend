@@ -1,0 +1,32 @@
+<!-- <div class="panel panel-primary">
+    <div class="panel-body">
+        <table class="table" id="listofchequbookrequest" >
+           <thead> 
+            <tr>
+                <th>UserId</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Account Types</th>
+                <th>Description</th>
+                <th>Confirmed</th>
+                <th>Action</th>
+            </tr>
+             </thead> 
+             <tbody> 
+
+            <tr *ngFor="let request of requests">
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.address}}</td>
+                <td id="action">
+                    <a  (click)="deletechequbookrequest(user.id)" style="color:red;">Delete</a>
+                    <a [routerLink]="['/updatechequbookrequest',user.id]" style="color:green;" >Update</a>
+                </td>
+            </tr>
+            </tbody> 
+        </table>
+
+    </div>
+</div> -->
