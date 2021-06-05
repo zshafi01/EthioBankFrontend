@@ -15,16 +15,23 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
    signin(){
-     this.backendservice.login(this.user)
-     .subscribe(user=>{
-    let userfound=user as User;
-    let url='/dashboard/'+userfound.id;
-    this.router.navigate([url]);
-  },
-  error=>{
-    this.router.navigate(['/errorpage']);
+this.backendservice.login(this.user)
+.subscribe(user=>{
+let userfound=user as User;
+debugger
+if(userfound.role=='admin'){
+  this.router.navigate(['admindashboard']);
 
-    console.log("Error is:",error);
-    })
+} else{
+  this.router.navigate(['/dashboard/'+ userfound.id]);
+
+}
+
+},
+(error)=>{
+this.router.navigate(['/errorpage']);
+
+console.log("Error is:",error);
+})
 }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendserviceService } from 'src/app/Services/backendservice.service';
 import { DataService } from 'src/app/Services/data.service';
-import { Customer } from '../profile/User.model';
+import { Customer } from '../profile/Customer.model';
 import { Account } from './Account.modle';
 
 @Component({

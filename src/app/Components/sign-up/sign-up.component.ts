@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
   signupuser(){
-    this.user.role="user"
+    // this.user.role="user"
   this.backendService.newuser(this.user).subscribe(user=>{
     console.log("saved user is:",JSON.stringify(user));
     this.router.navigate(['/login']);

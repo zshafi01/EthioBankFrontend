@@ -22,6 +22,13 @@ import { ErrorpageComponent } from './Components/errorpage/errorpage.component';
 import { RecipientsComponent } from './Components/recipients/recipients.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { TransactionComponent } from './Components/transaction/transaction.component';
+import { ProfileofdashboardComponent } from './Components/profileofdashboard/profileofdashboard.component';
+import { AdmindashboardComponent } from './Components/admindashboard/admindashboard.component';
+import { ListofcustomersComponent } from './Components/listofcustomers/listofcustomers.component';
+import { UpdatecustomerforadminComponent } from './Components/updatecustomerforadmin/updatecustomerforadmin.component';
+import { TransferdisplayComponent } from './Components/transferdisplay/transferdisplay.component';
+import { ListofaccountsComponent } from './Components/listofaccounts/listofaccounts.component';
+import { UpdateaccountComponent } from './Components/updateaccount/updateaccount.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,14 @@ import { TransactionComponent } from './Components/transaction/transaction.compo
     ErrorpageComponent,
     RecipientsComponent,
     NavComponent,
-    TransactionComponent
+    TransactionComponent,
+    ProfileofdashboardComponent,
+    AdmindashboardComponent,
+    ListofcustomersComponent,
+    UpdatecustomerforadminComponent,
+    TransferdisplayComponent,
+    ListofaccountsComponent,
+    UpdateaccountComponent
   ],
   imports: [
     BrowserModule,

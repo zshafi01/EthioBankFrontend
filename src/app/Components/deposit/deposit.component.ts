@@ -29,12 +29,14 @@ accountsList:Account[]=[];
     this.backendservice.loadAccounts(this.userId)
     .subscribe(accounts=>{
       this.accountsList = accounts as Account[];
-      console.log("Accounts lis it:", this.accountsList);
+      console.log("Accounts list it:", this.accountsList);
       
     })
 
   }
+  
   addmoney(){
+    debugger
     this.backendservice.deposit(this.accountnumber,this.amount).subscribe(deposit=>{
       console.log("saved deposit is:",JSON.stringify(deposit));
       // this.router.navigate(['/deposit']);

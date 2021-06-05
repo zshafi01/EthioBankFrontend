@@ -3,5 +3,7 @@ export class Withdrawl{
     public currentbalance:number=0; 
     public cardtypes:string='';
     public amount:number=0; 
+    public description:string='';
+
  
 }

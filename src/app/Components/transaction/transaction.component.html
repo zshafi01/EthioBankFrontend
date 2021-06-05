@@ -4,8 +4,6 @@
            <thead>
             <tr>
                 <th>Date</th>
-                <th>Description</th>
-                <th>Types</th>
                 <th>Amount</th>
                 <th>Balance</th>
 
@@ -14,11 +12,7 @@
             <tbody>
 
             <tr *ngFor="let transaction of transactions">
-                <td>{{transaction.date}}</td>
-                <!-- <td>{{transaction.todayNumber | date}}</td> -->
-                <!-- <td>{{transaction.date}}</td> -->
-                <td>{{transaction.description}}</td>
-                <td>{{transaction.types}}</td>
+                <td>{{transaction.date| date: 'MM-dd-yyyy'}}</td>
                 <td>{{transaction.amount}}</td>
                 <td>{{transaction.balance}}</td>
               

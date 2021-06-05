@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <table class="table" id="listofaccount" >
+           <thead> 
+            <tr>
+                <th>Account Number</th>
+                <th>Account Types</th>
+                <th>Balance</th>
+                <th>Action</th>
+            </tr>
+             </thead> 
+             <tbody> 
+
+            <tr *ngFor="let account of accounts">
+                <td>{{account.accountNumber}}</td>
+                <td>{{account.types}}</td>
+                <td>{{account.balance}}</td>
+                <td id="action">
+                    <a  (click)="deleteAccount(account.id)" style="color:red;">Delete</a>
+                    <a [routerLink]="['/updateaccount',account.id]" style="color:green;" >Update</a>
+                </td>
+            </tr>
+            </tbody> 
+        </table>
+
+    </div>
+</div>

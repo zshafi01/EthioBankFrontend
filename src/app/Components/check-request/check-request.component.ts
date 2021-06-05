@@ -9,6 +9,7 @@ import { ChequeBookReq } from './ChequeBookReq.model';
   styleUrls: ['./check-request.component.css']
 })
 export class CheckRequestComponent implements OnInit {
+  userId:string='';
 chequeBookReq:ChequeBookReq= new ChequeBookReq;
   constructor(private backendservice:BackendserviceService, private router:Router) { }
 
@@ -17,7 +18,7 @@ chequeBookReq:ChequeBookReq= new ChequeBookReq;
   request(){
     this.backendservice.addcheckreq(this.chequeBookReq).subscribe(chequeBookReq=>{
       console.log("saved admin is:",JSON.stringify(chequeBookReq));
-      this.router.navigate(['/chequeBookReq']);
+      this.router.navigate(['/dashboard/'+ this.userId]);
     },
     error=>{
       console.log("Error is:",error);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendserviceService } from 'src/app/Services/backendservice.service';
 import { DataService } from 'src/app/Services/data.service';
@@ -14,7 +14,9 @@ export class WithdrawComponent implements OnInit {
   userId:string='';
   withdrawl:Withdrawl = new Withdrawl;
   amount:string='0';
-  accountnumber:string=''
+  accountnumber:string='';
+  public description:string='';
+
   
   
   accountsList:Account[]=[];

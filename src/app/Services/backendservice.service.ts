@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../Components/login/user.model';
-import { Customer } from '../Components/profile/User.model';
+import { Customer } from '../Components/profile/Customer.model';
 import { ChequeBookReq } from '../Components/check-request/ChequeBookReq.model';
 import { Account } from '../Components/account/Account.modle';
 import { Deposit } from '../Components/deposit/Deposit.model';
@@ -14,6 +14,12 @@ import { Transaction } from '../Components/transaction/Transaction.model';
   providedIn: 'root'
 })
 export class BackendserviceService {
+  delete(id: Number):Observable<any>{
+    return this.http.delete('http://localhost:8081/customer/'+id);
+  }
+  deleteAccount(id: Number):Observable<any>{
+    return this.http.delete('http://localhost:8081/account/'+id);
+  }
   listoftransaction(userId:string):Observable<any>{
     return this.http.get("http://localhost:8081/listoftransaction/"+userId);
   }
@@ -51,8 +57,8 @@ withdrawl(accountNumber:string,amount:string):Observable<any>{
 addtransfer(transfer:Transfer, userId:string):Observable<any>{
   return this.http.post("http://localhost:8081/addtransfer" +userId, transfer)
 }
-addrecipient(recipient:Recipient):Observable<any>{
-  return this.http.post("http://localhost:8081/addrecipients", recipient)
+addrecipient(recipient:Recipient,userId:string):Observable<any>{
+  return this.http.post("http://localhost:8081/addrecipients/"+userId, recipient)
 
 }
 
@@ -64,5 +70,23 @@ customerByUserId(userId:string):Observable<any>{
   return this.http.get('http://localhost:8081/customerUserId/'+userId)
 }
 
-// 
+
+listofcustomers():Observable<any>{
+  return this.http.get("http://localhost:8081/listofcustomers")
+}
+listofaccounts():Observable<any>{
+  return this.http.get("http://localhost:8081/listofaccounts")
+}
+updatecustomers(customer:Customer):Observable<any>{
+  return this.http.put("http://localhost:8081/updatecustomers", customer)
+}
+updateaccount(account:Account):Observable<any>{
+  return this.http.put("http://localhost:8081/updateaccount", account)
+}
+getcustomerbyid (id:Number):Observable<any>{
+  return this.http.get("http://localhost:8081/customer/" +id)
+}
+getaccountbyid(id:Number):Observable<any>{
+  return this.http.get("http://localhost:8081/account/" +id)
+}
 }

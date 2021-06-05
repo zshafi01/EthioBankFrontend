@@ -1,0 +1,63 @@
+<div class="panel panel-primary">
+    <form #profileform="ngForm" (ngSubmit)="updatecustomer()">
+        <div class="panel-heading">
+            <h3 class="panel-title">Update Profile</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form row">
+
+                <div class="form-group col-md-6">
+                    <label for="id">Id </label>
+                   <input id="id" type="text" class="form-control" name="id"
+                       [(ngModel)]="customer.id">
+               </div>
+                <div class="form-group col-md-6">
+                     <label for="firstname"> First Name </label>
+                    <input id="firstName" type="text" placeholder="Frist Name" class="form-control" name="firstName"
+                        [(ngModel)]="customer.firstName">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="lastname">Last Name </label>
+                    <input id="lastName" type="text" placeholder="Last Name" class="form-control" name="lastName"
+                        [(ngModel)]="customer.lastName">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email </label>
+                    <input id="email" type="text" placeholder="Email" class="form-control" name="email"
+                        [(ngModel)]="customer.email">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number </label>
+                    <input id="phone" type="text" placeholder="Phone Number" class="form-control" name="phone"
+                        [(ngModel)]="customer.phone">
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="address">Address </label>
+                    <input id="address" type="text" placeholder="Full Address" class="form-control" name="address"
+                        [(ngModel)]="customer.address">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+
+                    <label for="ssn">SSN </label>
+                    <input id="ssn" type="text" placeholder="ssn" class="form-control" name="ssn"
+                        [(ngModel)]="customer.ssn">
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

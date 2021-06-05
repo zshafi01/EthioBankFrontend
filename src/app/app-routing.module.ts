@@ -12,6 +12,10 @@ import { RecipientsComponent } from './Components/recipients/recipients.componen
 import { NavComponent } from './Components/nav/nav.component';
 import { DepositComponent } from './Components/deposit/deposit.component';
 import { WithdrawComponent } from './Components/withdraw/withdraw.component';
+import { ListofcustomersComponent } from './Components/listofcustomers/listofcustomers.component';
+import { AdmindashboardComponent } from './Components/admindashboard/admindashboard.component';
+import { ListofaccountsComponent } from './Components/listofaccounts/listofaccounts.component';
+import { UpdatecustomerforadminComponent } from './Components/updatecustomerforadmin/updatecustomerforadmin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,8 +29,15 @@ const routes: Routes = [
   {path: 'nav', component:NavComponent},
   {path: 'deposit', component:DepositComponent},
   {path: 'withdraw', component:WithdrawComponent},
+  { path: 'errorpage', component:ErrorpageComponent},
+  { path: 'listofcustomers', component:ListofcustomersComponent},
+  { path: 'listofaccounts', component:ListofaccountsComponent},
+  { path: 'updatecustomers/:id', component: UpdatecustomerforadminComponent},
 
-  { path: 'errorpage', component:ErrorpageComponent}
+  { path: 'admindashboard', component:AdmindashboardComponent}
+
+
+  
 ];
 
 @NgModule({

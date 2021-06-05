@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <table class="table" id="listofcustomer" >
+           <thead> 
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+             </thead> 
+             <tbody> 
+
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.address}}</td>
+                <td id="action">
+                    <a  (click)="deleteCustomer(customer.id)" style="color:red;">Delete</a>
+                    <a [routerLink]="['/updatecustomers',customer.id]" style="color:green;" >Update</a>
+                </td>
+            </tr>
+            </tbody> 
+        </table>
+
+    </div>
+</div>

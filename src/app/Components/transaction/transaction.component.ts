@@ -13,7 +13,8 @@ export class TransactionComponent implements OnInit {
 
   @Input("userIDValue") 
   userIDValue:string='';
-transactions:Transaction[] = [];
+transactions:Transaction[] = [];  today: number = Date.now();
+
   constructor(private backendservice:BackendserviceService, private router:Router) { }
 
   ngOnInit(): void {

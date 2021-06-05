@@ -5,16 +5,23 @@
         </div>
         <div class="panel-body">
             <div class="form-group">
+
                 <div class="form row">
                     <div class="form-group col-md-6">
-                        <label for="pickaccount">Pick an account</label>
-                        <input id="pickaccount" type="text" class="form-control" name="accounttype">
+                        <label for="cardTypes">Pick an account</label>
+                        <div class="form-group col-md-6">
+                            <select name="cardtypes" id="cardtypes" [(ngModel)]="chequeBookReq.accounttype">
+                                <option value="chacking">Chacking</option>
+                                <option value="saving">Saving</option>
+                            </select><br>
+                        </div>
                     </div>
                 </div>
                 <div class="form row">
                     <div class="form-group col-md-6">
                         <label for="description">Description</label>
-                        <input id="description" type="text" class="form-control" name="description">
+                        <input id="description" type="text" class="form-control" name="description"
+                            [(ngModel)]="chequeBookReq.description">
                     </div>
                 </div>
 

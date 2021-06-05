@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BackendserviceService } from 'src/app/Services/backendservice.service';
 import { DataService } from 'src/app/Services/data.service';
+import { Customer } from 'src/app/Components/profile/Customer.model';
 // import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,6 +11,7 @@ import { DataService } from 'src/app/Services/data.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  customer:Customer[]=[];
 
   userId:string=''
 

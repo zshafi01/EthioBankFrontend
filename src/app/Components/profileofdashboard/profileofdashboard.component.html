@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+    <h5>Personal Info</h5>
+      First Name:{{customerInfo.firstName}}<br/>
+      Last Name:{{customerInfo.lastName}}<br/>
+      Email:{{customerInfo.user.email}}<br/>
+      Phone:{{customerInfo.phone}}<br/>
+      Address:{{customerInfo.address}}<br/>
+      SSN:{{customerInfo.ssn}}
+
+      <hr>
+      <h5>Account Info</h5>
+      <div>
+        <table class="table table-bordered">
+            <thead> 
+            <tr>
+            <th>Account Number</th>
+            <th>Types</th>
+            <th>Balance</th>
+            </tr>
+    </thead>
+        <tbody>
+          <tr *ngFor="let account of customerInfo.accounts">
+              <td>{{account.accountNumber}}</td> 
+             <td>{{account.types}}</td> 
+             <td>{{account.balance}}</td> 
+             </tr>
+             </tbody>
+          </table>
+      </div>
+
+    </div>
+</div>

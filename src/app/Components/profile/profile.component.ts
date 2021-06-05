@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendserviceService } from 'src/app/Services/backendservice.service';
 import { DataService } from 'src/app/Services/data.service';
-import { Customer } from './User.model';
+import { User } from '../login/user.model';
+import { Customer } from './Customer.model';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,7 @@ import { Customer } from './User.model';
 })
 export class ProfileComponent implements OnInit {
 newcustomer: Customer = new Customer;
+user:User=new User;
 userId:string='';
 constructor(private backendService:BackendserviceService, private router:Router, private dataService:DataService) { }
   ngOnInit(): void {
