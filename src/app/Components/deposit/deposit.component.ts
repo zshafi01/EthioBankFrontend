@@ -36,7 +36,6 @@ accountsList:Account[]=[];
   }
   
   addmoney(){
-    debugger
     this.backendservice.deposit(this.accountnumber,this.amount).subscribe(deposit=>{
       console.log("saved deposit is:",JSON.stringify(deposit));
       // this.router.navigate(['/deposit']);

@@ -16,7 +16,6 @@ export class ListofaccountsComponent implements OnInit {
   constructor(private backendservice: BackendserviceService, private router: Router, private dataservice: DataService) { }
 
   ngOnInit(): void {
-    debugger
     this.backendservice
       .listofaccounts()
       .subscribe(

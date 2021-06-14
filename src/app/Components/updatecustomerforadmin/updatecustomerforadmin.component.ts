@@ -22,15 +22,19 @@ export class UpdatecustomerforadminComponent implements OnInit {
     .getcustomerbyid(this.idtoupdate)
     .subscribe((customertoupdate)=>{
      this.customer=customertoupdate as Customer
+     debugger
+     this.customer.email=customertoupdate.user.email
     });
     
   }
 
   updatecustomer(){
-    this.backendservice.updatecustomers(this.customer).subscribe(customer=>{
+    debugger
+    this.backendservice.updatecustomers(this.customer,this.idtoupdate).subscribe(customer=>{
       console.log("saved customer is:",JSON.stringify(customer));
-      this.router.navigate(['/listofcustomers']);
-      
+      // this.router.navigate(['/listofcustomers']);
+      this.router.navigate(['/admindashboard']);
+
     },
     error=>{
       console.log("Error is:",error);

@@ -20,7 +20,6 @@ export class ListofcustomersComponent implements OnInit {
   constructor(private backendservice: BackendserviceService, private router: Router, private dataservice: DataService) { }
 
   ngOnInit(): void {
-    debugger
     this.backendservice
       .listofcustomers()
       .subscribe(

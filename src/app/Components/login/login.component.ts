@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 this.backendservice.login(this.user)
 .subscribe(user=>{
 let userfound=user as User;
-debugger
 if(userfound.role=='admin'){
   this.router.navigate(['admindashboard']);
 

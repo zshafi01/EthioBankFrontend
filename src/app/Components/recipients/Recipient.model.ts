@@ -5,5 +5,6 @@ export class Recipient{
     public email:string="";
     public confirmemail:string="";
     public phone:string="";
+    public accountId:string="";
 
 }

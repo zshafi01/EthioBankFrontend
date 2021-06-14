@@ -3,40 +3,23 @@
         <div class="panel-heading">
             <h3 class="panel-title">Transfer Money</h3>
         </div>
-        <a type="button" class="btn btn-primary" routerLink="/recipients" >Add New Recipients</a><br/>
+        <a type="button" class="btn btn-primary" routerLink="/recipients">Add New Recipients</a><br />
 
         <div class="panel-body">
             <div class="form row">
                 <div class="form-group col-md-6">
-                    <label for="transferfrom">Transfer From</label>
-                    <input id="transferfrom" type="text" class="form-control" name="transferfrom"
-                        [(ngModel)]="transfer.transferfrom">
-                </div>
-            </div>
-            <div class="form row">
-                <div class="form-group col-md-6">
-                    <label for="transferto">Transfer To</label>
-                    <input id="transferto" type="text" class="form-control" name="transferto"
-                        [(ngModel)]="transfer.transferfrom">
+                    <label for="transferto">Recipient</label>
+                    <select name="transferto" id="transferto" [(ngModel)]="transfer.transferTo">
+                        <option *ngFor="let recipient of recipients" value="{{recipient.accountId}}">
+                            {{recipient.name}}/{{recipient.nickname}}
+                        </option>
+                    </select>
                 </div>
             </div>
             <div class="form row">
                 <div class="form-group col-md-6">
                     <label for="amount">Amount</label>
                     <input id="amount" type="text" class="form-control" name="amount" [(ngModel)]="transfer.amount">
-                </div>
-            </div>
-            <div class="form row">
-                <div class="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
-                    <input id="phone" type="text" class="form-control" name="phone" [(ngModel)]="transfer.phone">
-                </div>
-            </div>
-            <div class="form row">
-                <div class="form-group col-md-6">
-                    <label for="transferdate">Transfer Date</label>
-                    <input id="transferdate" type="text" class="form-control" name="transferdate"
-                        [(ngModel)]="transfer.transferdate">
                 </div>
             </div>
             <div class="form row">

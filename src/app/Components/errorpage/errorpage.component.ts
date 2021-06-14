@@ -12,7 +12,6 @@ export class ErrorpageComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    debugger;
     this.errormessage=this.activatedRoute.snapshot?.params['error']
   }
 

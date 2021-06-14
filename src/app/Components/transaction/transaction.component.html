@@ -1,23 +1,23 @@
 <div class="panel panel-primary">
     <div class="panel-body">
-        <table class="table" id="listoftransaction" >
-           <thead>
-            <tr>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Balance</th>
+        <table class="table" id="listoftransaction">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
 
-            </tr>
+                </tr>
             </thead>
             <tbody>
 
-            <tr *ngFor="let transaction of transactions">
-                <td>{{transaction.date| date: 'MM-dd-yyyy'}}</td>
-                <td>{{transaction.amount}}</td>
-                <td>{{transaction.balance}}</td>
-              
+                <tr *ngFor="let transaction of transactions">
+                    <td>{{transaction.date| date: 'MM-dd-yyyy'}}</td>
+                    <td>{{transaction.amount}}</td>
+                    <td>{{transaction.balance}}</td>
 
-            </tr>
+
+                </tr>
             </tbody>
 
 

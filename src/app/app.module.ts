@@ -29,7 +29,7 @@ import { UpdatecustomerforadminComponent } from './Components/updatecustomerfora
 import { TransferdisplayComponent } from './Components/transferdisplay/transferdisplay.component';
 import { ListofaccountsComponent } from './Components/listofaccounts/listofaccounts.component';
 import { UpdateaccountComponent } from './Components/updateaccount/updateaccount.component';
-import { ListofchequbookrequestComponent } from './listofchequbookrequest/listofchequbookrequest.component';
+import { ListofchequbookrequestComponent } from './Components/listofchequbookrequest/listofchequbookrequest.component';
 
 @NgModule({
   declarations: [

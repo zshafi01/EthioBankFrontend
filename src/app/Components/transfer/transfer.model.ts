@@ -2,9 +2,8 @@ import { Account } from "../account/Account.modle";
 
 export class Transfer{
     public id:Number=0;
-    public account:Account=new Account;
-    public transferfrom:string='';
-    public transferto:string='';
+    public transferFrom:string='';
+    public transferTo:string='';
     // public balance:number=0;
     public phone:string='';
     public amount:number=0;
